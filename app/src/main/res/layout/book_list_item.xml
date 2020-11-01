@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:src="@drawable/book_open"
+        android:layout_weight="15"
+        android:layout_width="0dp"
+        android:padding="8dp"
+        tools:ignore="Suspicious0dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="85"
+        android:layout_height="wrap_content"
+        tools:ignore="Suspicious0dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/title_textview"
+            android:textSize="@dimen/title_size"
+            android:id="@+id/tvTitle"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/title_textview"
+            android:textSize="18sp"
+            android:id="@+id/tvAuthors"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tvPublisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="70"
+                android:text="Publisher" />
+
+            <TextView
+                android:id="@+id/tvPublishDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="Publised Date"
+                 />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
