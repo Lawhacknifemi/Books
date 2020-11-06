@@ -2,6 +2,7 @@ package com.example.books;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,19 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 else {
                     URL queryURL = ApiUtil.buildUrl(title,authors,publisher,ISBN);
+                    //sharedPrefrence
+                    Context context = getApplicationContext();
+                    int position = SpUtil.getPrefInt(context,SpUtil.POSITION);
+                    if(position == 0 || position== 5){
+                        position = 1;
+                    }else{
+                        position++;
+                    }
+                    String key = SpUtil.QUERY + String.valueOf(position);
+                    String value = title + "," + authors + "," + publisher + "," + ISBN;
+                    SpUtil.setPreferenceString(context,key,value);
+                    SpUtil.setPreferenceInt(context,SpUtil.POSITION,position);
+
                     Intent intent = new Intent(getApplicationContext(),BookDetalisActivity.class);
                     intent.putExtra("Query",queryURL);
                     startActivity(intent);
